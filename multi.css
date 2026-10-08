@@ -65,10 +65,12 @@ body {
 
 /* ---------- Encabezado ---------- */
 .portada {
+  position: relative;
    background-image: url("img/brawlstaraura.jpeg");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+    height: 300px !important;
 }
 :root[data-theme="dark"] .portada,
 .portada { --portada-texto: #ffffff; }
