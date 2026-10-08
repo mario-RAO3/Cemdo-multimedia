@@ -198,12 +198,12 @@ section ul.lista li::marker { color: var(--celeste); }
   max-width: 100%;
 }
 .imagen img, .imagen .marcador {
-  display: block; width: 100%; aspect-ratio: 16 / 8; object-fit: cover;
+  display: block; width: 100%; aspect-ratio: 16 / 10;
+  background-size: cover;
+    background-position: center;
 }
 .marcador {
   background:
-    radial-gradient(circle at 78% 32%, var(--amarillo) 0 9%, transparent 9.5%),
-    linear-gradient(to top, var(--celeste-hondo) 0 22%, transparent 22%),
     linear-gradient(170deg, var(--celeste-suave), var(--celeste));
   display: flex !important; align-items: center; justify-content: center;
   color: #fff; font-weight: 700; letter-spacing: .04em; font-size: .95rem;
@@ -244,6 +244,7 @@ section ul.lista li::marker { color: var(--celeste); }
   padding: 1rem 1.25rem;
   margin: 1.25rem 0;
   max-width: 68ch;
+  
 }
 .aviso p { margin: 0; }
 
