@@ -8,16 +8,27 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=Nunito+Sans:opsz,wght@6..12,400;6..12,600;6..12,700&display=swap">
 <link rel="stylesheet" href="multi.css">
+<script>
+  /* Aplica el tema guardado antes de pintar la página, para que no parpadee */
+  try { var t = localStorage.getItem('cemdo-tema'); if (t === 'light' || t === 'dark') document.documentElement.setAttribute('data-theme', t); } catch (e) {}
+</script>
 </head>
 <body style="margin:0">
 
 <div class="barra">
   <div class="barra-inner">
-    <a class="logo" href="https://www.multimediocemdo.com.ar/" aria-label="CEMDO, ir al inicio">
+    <a class="logo" href="#inicio" aria-label="CEMDO, ir al inicio">
       <img src="img/multimedio.png" alt="CEMDO">
     
     </a>
-    <span class="barra-area"><button><a href="https://www.cemdo.com.ar/" style="text-decoration: none;">Volver a Cemdo</a></button></span>
+    <div class="barra-acciones">
+      <div class="tema" role="group" aria-label="Tema de la página">
+        <button type="button" data-tema="light" title="Tema claro" aria-pressed="false"><span aria-hidden="true">☀</span><span class="tema-txt">Claro</span></button>
+        <button type="button" data-tema="dark" title="Tema oscuro" aria-pressed="false"><span aria-hidden="true">☾</span><span class="tema-txt">Oscuro</span></button>
+        <button type="button" data-tema="auto" title="Igual que el dispositivo" aria-pressed="true"><span aria-hidden="true" class="tema-a">A</span><span class="tema-txt">Auto</span></button>
+      </div>
+      <span class="barra-area"><button><a href="https://www.cemdo.com.ar/" style="text-decoration: none;">Volver a Cemdo</a></button></span>
+    </div>
   </div>
 </div>
 
@@ -47,7 +58,7 @@
   <main class="contenido">
     <section id="origenes">
       <h2>1987 · Los orígenes</h2>
-      <p>El 24 de mayo de 1989, desde la municipalidad de Villa Dolores, se realizo la primer emision radial local de traslasierra gracias al ingeniero y gerete tecnico Julio Comez, y a la consola de sonido que había creado. Sin embargo, el verdadero comienzo fue dos años atras donde ,debido a los militares, no era posible emitir de forma legal e independiente. Pero gracias a la perseverancia y esfuerzo de pioneros, que en sus inicios retransmitian la señal de ATC de Buenos Aires y que siguieron insistiendo, este proyecto se concretó.</p>
+      <p>El 24 de mayo de 1989, desde la municipalidad de Villa Dolores, se realizo la primer emision radial local de traslasierra gracias al ingeniero y gerete tecnico Julio Comez, y a la consola de sonido que había creado. Sin embargo, el verdadero comienzo fue dos años atrás donde, debido a los militares, no era posible emitir de forma legal e independiente. Pero gracias a la perseverancia y esfuerzo de pioneros, que en sus inicios retransmitian la señal de ATC de Buenos Aires y que siguieron insistiendo, este proyecto se concretó.</p>
       <figure class="imagen">
         <img src="img/consolaSonido.png" alt="Consola de sonido de los primeros años" height="100%">
       </figure>

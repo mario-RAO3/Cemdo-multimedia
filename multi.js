@@ -26,3 +26,24 @@
     }
     activar('origenes');
   })();
+
+  // Selector de tema: claro, oscuro o automático (sigue al dispositivo)
+  (function () {
+    var CLAVE = 'cemdo-tema';
+    var raiz = document.documentElement;
+    var botones = Array.prototype.slice.call(document.querySelectorAll('.tema button'));
+    function aplicar(tema) {
+      if (tema === 'light' || tema === 'dark') raiz.setAttribute('data-theme', tema);
+      else { tema = 'auto'; raiz.removeAttribute('data-theme'); }
+      botones.forEach(function (b) { b.setAttribute('aria-pressed', b.dataset.tema === tema ? 'true' : 'false'); });
+    }
+    var guardado = null;
+    try { guardado = localStorage.getItem(CLAVE); } catch (e) {}
+    aplicar(guardado);
+    botones.forEach(function (b) {
+      b.addEventListener('click', function () {
+        aplicar(b.dataset.tema);
+        try { localStorage.setItem(CLAVE, b.dataset.tema); } catch (e) {}
+      });
+    });
+  })();
