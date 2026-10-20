@@ -160,7 +160,7 @@ body {
   transition: background .15s, transform .15s;
 }
 .menu a:hover { background: var(--celeste-suave); }
-.menu a.activo { background: var(--celeste); color: #fff; }
+.menu a.activo { background: var(--boton); color: #fff; }
 .menu a.activo .punto { background: var(--amarillo); transform: scale(1.25); }
 .menu a:focus-visible { outline: 3px solid var(--amarillo); outline-offset: 2px; }
 .btn-arriba {
@@ -198,8 +198,8 @@ section h2::before {
   flex: none;
 }
 section h3 { font-family: var(--font-display); font-weight: 600; font-size: 1.2rem; margin: 1.5rem 0 .4rem; }
-section p { margin: 0 0 1rem; max-width: 68ch; }
-section ul.lista { margin: 0 0 1rem; padding-left: 1.2rem; max-width: 66ch; }
+section p { margin: 0 0 1rem; }
+section ul.lista { margin: 0 0 1rem; padding-left: 1.2rem; }
 section ul.lista li { margin-bottom: .35rem; }
 section ul.lista li::marker { color: var(--celeste); }
 
@@ -257,13 +257,12 @@ section ul.lista li::marker { color: var(--celeste); }
   border-radius: 0 var(--radio) var(--radio) 0;
   padding: 1rem 1.25rem;
   margin: 1.25rem 0;
-  max-width: 68ch;
   
 }
 .aviso p { margin: 0; }
 
 /* Pasos */
-.pasos { list-style: none; counter-reset: paso; padding: 0; margin: 1rem 0; display: grid; gap: .9rem; max-width: 68ch; }
+.pasos { list-style: none; counter-reset: paso; padding: 0; margin: 1rem 0; display: grid; gap: .9rem; }
 .pasos li { counter-increment: paso; display: grid; grid-template-columns: 2.4rem minmax(0, 1fr); gap: .9rem; align-items: start; }
 .pasos li::before {
   content: counter(paso);
@@ -337,3 +336,32 @@ cursor: pointer;
 }
 .barra-area button:hover a { background: var(--boton-hover); border-radius: 999px; }
 .barra-area button:focus-visible { outline: 3px solid var(--amarillo); outline-offset: 2px; border-radius: 999px; }
+
+/* ---------- Selector de tema (claro / oscuro / auto) ---------- */
+.barra-acciones { display: flex; align-items: center; gap: .75rem; flex-wrap: wrap; }
+.tema {
+  display: inline-flex;
+  padding: 3px;
+  gap: 2px;
+  background: var(--bg-alt);
+  border: 1px solid var(--linea);
+  border-radius: 999px;
+}
+.tema button {
+  display: inline-flex; align-items: center; gap: .35rem;
+  padding: .3rem .7rem;
+  border-radius: 999px;
+  background: transparent;
+  color: var(--fg-muted);
+  font: 700 .78rem var(--font-body);
+  letter-spacing: .02em;
+  transition: background .15s, color .15s;
+}
+.tema button:hover { color: var(--fg); background: var(--celeste-suave); }
+.tema button[aria-pressed="true"] { background: var(--boton); color: #fff; }
+.tema button:focus-visible { outline: 3px solid var(--amarillo); outline-offset: 1px; }
+@media (max-width: 560px) {
+  .tema-txt { display: none; }
+  .tema button { padding: .3rem .6rem; font-size: .95rem; }
+}
+.tema-a { font-weight: 800; font-family: var(--font-display); }
